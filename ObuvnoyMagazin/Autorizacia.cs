@@ -17,18 +17,20 @@ namespace ObuvnoyMagazin
         public Autorizacia()
         {
             InitializeComponent();
-            
+
         }
-        public void Aut() 
+        public void Aut()
         {
-            using (NpgsqlConnection con = new NpgsqlConnection(connectDB)) 
+            using (NpgsqlConnection con = new NpgsqlConnection(connectDB))
             {
                 con.Open();
-                var sql = $@"SELECT roles.role_name, fio, login, password
+                var sql = @"SELECT roles.role_name, fio, login, password
 	                        FROM public.users
 	                        JOIN public.roles ON roles.id = users.role_fk
-                            WHERE login = '{textBoxLogin.Text}' AND password = '{textBoxPassword.Text}' ";
-                NpgsqlCommand cmd = new NpgsqlCommand(sql,con);
+                            WHERE login = @login AND password = @password ";
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@login", textBoxLogin.Text);
+                cmd.Parameters.AddWithValue("@password", textBoxPassword.Text);
                 NpgsqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
@@ -38,7 +40,7 @@ namespace ObuvnoyMagazin
                     mainForm.ShowDialog();
                     this.Close();
                 }
-                else 
+                else
                 {
                     MessageBox.Show("Неправильный логин или пароль, либо вы не заполнили поля", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -52,10 +54,21 @@ namespace ObuvnoyMagazin
             mainForm.ShowDialog();
             this.Close();
         }
-        
+
         private void buttonAutorizacia_Click(object sender, EventArgs e)
         {
             Aut();
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                textBoxPassword.UseSystemPasswordChar = false;
+            }
+            if (checkBox1.Checked == false)
+            {
+                textBoxPassword.UseSystemPasswordChar = true;
+            }
         }
     }
 }

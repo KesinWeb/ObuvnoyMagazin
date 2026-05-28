@@ -28,12 +28,13 @@ namespace ObuvnoyMagazin
         public string Picture { get; set; }
         public int Discount { get; set; }
         public double TotalSales { get; set; }
+        public string Role { get; set; }
 
-
-        public TovarControl()
+        public TovarControl(string Role)
         {
             InitializeComponent();
-
+            this.Role = Role;
+            if (Role != "Администратор") { buttonDelete.Visible = false; buttonRedact.Visible = false; }
         }
         public void SetLabels()
         {
@@ -69,25 +70,25 @@ namespace ObuvnoyMagazin
 
         private void buttonDownloadImage_Click(object sender, EventArgs e)
         {
-            using (NpgsqlConnection con = new NpgsqlConnection(connectDB)) 
+            using (NpgsqlConnection con = new NpgsqlConnection(connectDB))
             {
                 con.Open();
                 string proverka = $@"SELECT * FROM public.zakaz_tovar WHERE article_fk = '{IdArticle}' ;";
-                using (NpgsqlCommand cmd = new NpgsqlCommand(proverka, con)) 
+                using (NpgsqlCommand cmd = new NpgsqlCommand(proverka, con))
                 {
                     int orderCount = Convert.ToInt32(cmd.ExecuteScalar());
                     if (orderCount > 0)
                     {
-                        MessageBox.Show("Невозможно удалить товар так как он в заказе","Предупреждение", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        MessageBox.Show("Невозможно удалить товар так как он в заказе", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
                     {
-                        if (MessageBox.Show("Вы точно хотите удалить товар?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) 
+                        if (MessageBox.Show("Вы точно хотите удалить товар?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
                             string delete = $@"DELETE FROM public.tovar
 	                                        WHERE id_article = '{IdArticle}' ; ";
-                            using (NpgsqlCommand command = new NpgsqlCommand(delete,con)) 
+                            using (NpgsqlCommand command = new NpgsqlCommand(delete, con))
                             {
                                 command.ExecuteNonQuery();
                                 {
@@ -101,6 +102,13 @@ namespace ObuvnoyMagazin
                     }
                 }
             }
+        }
+
+        private void buttonRedact_Click(object sender, EventArgs e)
+        {
+            var addform = new AddForm(true, IdArticle);
+            addform.Show();
+            addform.SelectRedact();
         }
     }
 }

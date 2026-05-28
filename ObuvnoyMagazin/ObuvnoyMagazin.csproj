@@ -101,6 +101,12 @@
     <Compile Include="AddForm.Designer.cs">
       <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddZakazForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddZakazForm.Designer.cs">
+      <DependentUpon>AddZakazForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Autorizacia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,8 +127,17 @@
     <Compile Include="TovarControl.Designer.cs">
       <DependentUpon>TovarControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZakazControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZakazControl.Designer.cs">
+      <DependentUpon>ZakazControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddZakazForm.resx">
+      <DependentUpon>AddZakazForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Autorizacia.resx">
       <DependentUpon>Autorizacia.cs</DependentUpon>
@@ -138,9 +153,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="TovarControl.resx">
       <DependentUpon>TovarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZakazControl.resx">
+      <DependentUpon>ZakazControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

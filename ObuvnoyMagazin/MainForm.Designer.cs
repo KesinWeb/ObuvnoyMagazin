@@ -143,6 +143,7 @@
             this.buttonZakaz.TabIndex = 9;
             this.buttonZakaz.Text = "Заказ";
             this.buttonZakaz.UseVisualStyleBackColor = false;
+            this.buttonZakaz.Click += new System.EventHandler(this.buttonZakaz_Click);
             // 
             // buttonZakazAdd
             // 
@@ -154,6 +155,7 @@
             this.buttonZakazAdd.TabIndex = 10;
             this.buttonZakazAdd.Text = "Добавление Заказа";
             this.buttonZakazAdd.UseVisualStyleBackColor = false;
+            this.buttonZakazAdd.Click += new System.EventHandler(this.buttonZakazAdd_Click);
             // 
             // textBoxPoisc
             // 
@@ -175,15 +177,17 @@
             // 
             // comboBoxPost
             // 
+            this.comboBoxPost.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPost.FormattingEnabled = true;
             this.comboBoxPost.Items.AddRange(new object[] {
+            "Все поставщики",
             "Kari",
             "Обувь для вас"});
             this.comboBoxPost.Location = new System.Drawing.Point(778, 116);
             this.comboBoxPost.Name = "comboBoxPost";
             this.comboBoxPost.Size = new System.Drawing.Size(131, 22);
             this.comboBoxPost.TabIndex = 13;
-            this.comboBoxPost.Text = "Все поставщики";
+            this.comboBoxPost.TextChanged += new System.EventHandler(this.comboBoxPost_TextChanged);
             // 
             // labelPost
             // 
@@ -205,6 +209,7 @@
             this.radioButtonUbv.TabStop = true;
             this.radioButtonUbv.Text = "По убыванию";
             this.radioButtonUbv.UseVisualStyleBackColor = true;
+            this.radioButtonUbv.CheckedChanged += new System.EventHandler(this.radioButtonUbv_CheckedChanged);
             // 
             // radioButtonVzr
             // 
@@ -216,6 +221,7 @@
             this.radioButtonVzr.TabStop = true;
             this.radioButtonVzr.Text = "По возрастанию";
             this.radioButtonVzr.UseVisualStyleBackColor = true;
+            this.radioButtonVzr.CheckedChanged += new System.EventHandler(this.radioButtonVzr_CheckedChanged);
             // 
             // MainForm
             // 

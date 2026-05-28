@@ -30,6 +30,7 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.labelTotalSales = new System.Windows.Forms.Label();
             this.labelQuantitySclad = new System.Windows.Forms.Label();
@@ -41,7 +42,7 @@
             this.labelName_tovar = new System.Windows.Forms.Label();
             this.labelCategory = new System.Windows.Forms.Label();
             this.labelDiscount = new System.Windows.Forms.Label();
-            this.buttonDownloadImage = new System.Windows.Forms.Button();
+            this.buttonRedact = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +59,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Chartreuse;
-            this.panel1.Controls.Add(this.buttonDownloadImage);
+            this.panel1.Controls.Add(this.buttonRedact);
+            this.panel1.Controls.Add(this.buttonDelete);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.labelTotalSales);
             this.panel1.Controls.Add(this.labelQuantitySclad);
@@ -75,6 +77,18 @@
             this.panel1.Size = new System.Drawing.Size(475, 106);
             this.panel1.TabIndex = 1;
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.buttonDelete.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDelete.Location = new System.Drawing.Point(366, 78);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(106, 22);
+            this.buttonDelete.TabIndex = 40;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDownloadImage_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -87,7 +101,7 @@
             // labelTotalSales
             // 
             this.labelTotalSales.AutoSize = true;
-            this.labelTotalSales.Location = new System.Drawing.Point(96, 60);
+            this.labelTotalSales.Location = new System.Drawing.Point(111, 60);
             this.labelTotalSales.Name = "labelTotalSales";
             this.labelTotalSales.Size = new System.Drawing.Size(77, 14);
             this.labelTotalSales.TabIndex = 10;
@@ -178,17 +192,17 @@
             this.labelDiscount.Text = "Скидка";
             this.labelDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonDownloadImage
+            // buttonRedact
             // 
-            this.buttonDownloadImage.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.buttonDownloadImage.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDownloadImage.Location = new System.Drawing.Point(383, 78);
-            this.buttonDownloadImage.Name = "buttonDownloadImage";
-            this.buttonDownloadImage.Size = new System.Drawing.Size(89, 22);
-            this.buttonDownloadImage.TabIndex = 40;
-            this.buttonDownloadImage.Text = "Удалить";
-            this.buttonDownloadImage.UseVisualStyleBackColor = false;
-            this.buttonDownloadImage.Click += new System.EventHandler(this.buttonDownloadImage_Click);
+            this.buttonRedact.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.buttonRedact.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonRedact.Location = new System.Drawing.Point(366, 55);
+            this.buttonRedact.Name = "buttonRedact";
+            this.buttonRedact.Size = new System.Drawing.Size(106, 22);
+            this.buttonRedact.TabIndex = 41;
+            this.buttonRedact.Text = "Редактировать";
+            this.buttonRedact.UseVisualStyleBackColor = false;
+            this.buttonRedact.Click += new System.EventHandler(this.buttonRedact_Click);
             // 
             // TovarControl
             // 
@@ -222,6 +236,7 @@
         private System.Windows.Forms.Label labelDiscount;
         private System.Windows.Forms.Label labelTotalSales;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonDownloadImage;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonRedact;
     }
 }

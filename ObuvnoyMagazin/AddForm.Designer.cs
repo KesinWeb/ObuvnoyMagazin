@@ -46,14 +46,14 @@
             this.labelAdm = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelAddTovar = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.numericUpDownDiscount = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.numericUpDownQuantity = new System.Windows.Forms.NumericUpDown();
             this.maskedTextBoxSale = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
             this.buttonTovarAdd = new System.Windows.Forms.Button();
             this.buttonDownloadImage = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -61,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // labelEdIzm
@@ -154,6 +154,7 @@
             // 
             // comboBoxPostav
             // 
+            this.comboBoxPostav.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPostav.FormattingEnabled = true;
             this.comboBoxPostav.Items.AddRange(new object[] {
             "Kari",
@@ -165,6 +166,7 @@
             // 
             // comboBoxProiz
             // 
+            this.comboBoxProiz.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxProiz.FormattingEnabled = true;
             this.comboBoxProiz.Items.AddRange(new object[] {
             "Kari",
@@ -180,6 +182,7 @@
             // 
             // comboBoxCateg
             // 
+            this.comboBoxCateg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCateg.FormattingEnabled = true;
             this.comboBoxCateg.Items.AddRange(new object[] {
             "Женская обувь",
@@ -191,6 +194,8 @@
             // 
             // comboBoxNameTovar
             // 
+            this.comboBoxNameTovar.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBoxNameTovar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNameTovar.FormattingEnabled = true;
             this.comboBoxNameTovar.Items.AddRange(new object[] {
             "Ботинки",
@@ -221,6 +226,7 @@
             this.maskedTextBoxArticle.Name = "maskedTextBoxArticle";
             this.maskedTextBoxArticle.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxArticle.TabIndex = 26;
+            this.maskedTextBoxArticle.Validating += new System.ComponentModel.CancelEventHandler(this.maskedTextBoxArticle_Validating);
             // 
             // labelAdm
             // 
@@ -253,15 +259,15 @@
             this.label8.TabIndex = 29;
             this.label8.Text = "Категория товара";
             // 
-            // label9
+            // labelAddTovar
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(330, 38);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(192, 24);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Добавление товара";
+            this.labelAddTovar.AutoSize = true;
+            this.labelAddTovar.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelAddTovar.Location = new System.Drawing.Point(300, 38);
+            this.labelAddTovar.Name = "labelAddTovar";
+            this.labelAddTovar.Size = new System.Drawing.Size(192, 24);
+            this.labelAddTovar.TabIndex = 30;
+            this.labelAddTovar.Text = "Добавление товара";
             // 
             // label10
             // 
@@ -321,23 +327,23 @@
             this.label12.TabIndex = 36;
             this.label12.Text = "руб.";
             // 
-            // pictureBox2
+            // pictureBoxPhoto
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(404, 242);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(103, 84);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 37;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxPhoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPhoto.Image")));
+            this.pictureBoxPhoto.Location = new System.Drawing.Point(375, 242);
+            this.pictureBoxPhoto.Name = "pictureBoxPhoto";
+            this.pictureBoxPhoto.Size = new System.Drawing.Size(103, 84);
+            this.pictureBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPhoto.TabIndex = 37;
+            this.pictureBoxPhoto.TabStop = false;
             // 
             // buttonTovarAdd
             // 
-            this.buttonTovarAdd.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.buttonTovarAdd.BackColor = System.Drawing.Color.Chartreuse;
             this.buttonTovarAdd.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonTovarAdd.Location = new System.Drawing.Point(404, 360);
+            this.buttonTovarAdd.Location = new System.Drawing.Point(351, 366);
             this.buttonTovarAdd.Name = "buttonTovarAdd";
-            this.buttonTovarAdd.Size = new System.Drawing.Size(103, 22);
+            this.buttonTovarAdd.Size = new System.Drawing.Size(156, 28);
             this.buttonTovarAdd.TabIndex = 38;
             this.buttonTovarAdd.Text = "Добавить товар";
             this.buttonTovarAdd.UseVisualStyleBackColor = false;
@@ -345,22 +351,23 @@
             // 
             // buttonDownloadImage
             // 
-            this.buttonDownloadImage.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.buttonDownloadImage.BackColor = System.Drawing.Color.Chartreuse;
             this.buttonDownloadImage.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDownloadImage.Location = new System.Drawing.Point(404, 332);
+            this.buttonDownloadImage.Location = new System.Drawing.Point(351, 332);
             this.buttonDownloadImage.Name = "buttonDownloadImage";
-            this.buttonDownloadImage.Size = new System.Drawing.Size(103, 22);
+            this.buttonDownloadImage.Size = new System.Drawing.Size(156, 28);
             this.buttonDownloadImage.TabIndex = 39;
             this.buttonDownloadImage.Text = "Загрузить фото";
             this.buttonDownloadImage.UseVisualStyleBackColor = false;
+            this.buttonDownloadImage.Click += new System.EventHandler(this.buttonDownloadImage_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Chartreuse;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(-6, 388);
+            this.panel1.Location = new System.Drawing.Point(-6, 416);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(563, 101);
+            this.panel1.Size = new System.Drawing.Size(563, 73);
             this.panel1.TabIndex = 40;
             // 
             // panel2
@@ -382,14 +389,14 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonDownloadImage);
             this.Controls.Add(this.buttonTovarAdd);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBoxPhoto);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.maskedTextBoxSale);
             this.Controls.Add(this.numericUpDownQuantity);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.numericUpDownDiscount);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.labelAddTovar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.labelAdm);
             this.Controls.Add(this.pictureBox1);
@@ -415,7 +422,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDiscount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,14 +447,14 @@
         private System.Windows.Forms.Label labelAdm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelAddTovar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown numericUpDownDiscount;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown numericUpDownQuantity;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxSale;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxPhoto;
         private System.Windows.Forms.Button buttonTovarAdd;
         private System.Windows.Forms.Button buttonDownloadImage;
         private System.Windows.Forms.Panel panel1;

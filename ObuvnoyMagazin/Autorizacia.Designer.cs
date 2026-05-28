@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             // 
             this.buttonAutorizacia.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.buttonAutorizacia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAutorizacia.Location = new System.Drawing.Point(57, 185);
+            this.buttonAutorizacia.Location = new System.Drawing.Point(57, 210);
             this.buttonAutorizacia.Name = "buttonAutorizacia";
             this.buttonAutorizacia.Size = new System.Drawing.Size(128, 38);
             this.buttonAutorizacia.TabIndex = 0;
@@ -56,7 +57,7 @@
             // 
             this.buttonVhodGost.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.buttonVhodGost.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonVhodGost.Location = new System.Drawing.Point(57, 229);
+            this.buttonVhodGost.Location = new System.Drawing.Point(57, 254);
             this.buttonVhodGost.Name = "buttonVhodGost";
             this.buttonVhodGost.Size = new System.Drawing.Size(128, 38);
             this.buttonVhodGost.TabIndex = 1;
@@ -77,6 +78,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(138, 20);
             this.textBoxPassword.TabIndex = 3;
+            this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -111,6 +113,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Chartreuse;
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.buttonAutorizacia);
@@ -122,6 +125,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(237, 319);
             this.panel1.TabIndex = 7;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(52, 182);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(105, 18);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "Показать пароль";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Autorizacia
             // 
@@ -151,6 +165,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
