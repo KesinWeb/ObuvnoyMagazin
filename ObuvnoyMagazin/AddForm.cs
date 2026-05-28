@@ -218,32 +218,17 @@ namespace ObuvnoyMagazin
             }
         }
 
-        private void buttonDownloadImage_Click(object sender, EventArgs e)
-        {
-            var dialog = new OpenFileDialog() { Filter = "Image Files|*.jpg;*.png;*.jpeg;*.bmp" };
-            if (dialog.ShowDialog() == DialogResult.OK)
+            private void buttonDownloadImage_Click(object sender, EventArgs e)
             {
-                var image = Path.Combine(Path.Combine(Application.StartupPath, "images"), dialog.SafeFileName);
-                File.Copy(dialog.FileName, image, true);
-                pictureBoxPhoto.Image = Image.FromFile(image);
-                buttonDownloadImage.Text = dialog.SafeFileName;
-                MessageBox.Show("Фото загружено", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void maskedTextBoxArticle_Validating(object sender, CancelEventArgs e)
-        {
-            // MaskFull возвращает true, если введены все 6 символов маски
-            if (!maskedTextBoxArticle.MaskFull)
-            {
-                // Останавливаем смену фокуса, пока ошибка не исправится
-                e.Cancel = true;
-
-                // Выводим предупреждение
-                MessageBox.Show("Артикул должен состоять ровно из 6 символов формата L000LL!",
-                                "Ошибка валидации",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                var dialog = new OpenFileDialog() { Filter = "Image Files|*.jpg;*.png;*.jpeg;*.bmp" };
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    var image = Path.Combine(Path.Combine(Application.StartupPath, "images"), dialog.SafeFileName);
+                    File.Copy(dialog.FileName, image, true);
+                    pictureBoxPhoto.Image = Image.FromFile(image);
+                    buttonDownloadImage.Text = dialog.SafeFileName;
+                    MessageBox.Show("Фото загружено", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }
