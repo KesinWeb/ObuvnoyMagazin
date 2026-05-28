@@ -226,7 +226,6 @@
             this.maskedTextBoxArticle.Name = "maskedTextBoxArticle";
             this.maskedTextBoxArticle.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxArticle.TabIndex = 26;
-            this.maskedTextBoxArticle.Validating += new System.ComponentModel.CancelEventHandler(this.maskedTextBoxArticle_Validating);
             // 
             // labelAdm
             // 
