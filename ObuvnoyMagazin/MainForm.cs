@@ -109,7 +109,7 @@ namespace ObuvnoyMagazin
                     {
                         while (reader.Read())
                         {
-                            var tovar = new ZakazControl();
+                            var tovar = new ZakazControl(reader.GetInt32(0));
                             tovar.NomerZakaza = reader.GetInt32(0);
                             tovar.DataZakaza = reader.GetDateTime(1);
                             tovar.DataDostavki = reader.GetDateTime(2);

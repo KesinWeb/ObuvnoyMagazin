@@ -124,9 +124,6 @@
             this.comboBoxStatus.BackColor = System.Drawing.SystemColors.Window;
             this.comboBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatus.FormattingEnabled = true;
-            this.comboBoxStatus.Items.AddRange(new object[] {
-            "Завершен",
-            "Новый"});
             this.comboBoxStatus.Location = new System.Drawing.Point(185, 399);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(121, 22);
@@ -137,43 +134,6 @@
             this.comboBoxAdress.BackColor = System.Drawing.SystemColors.Window;
             this.comboBoxAdress.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAdress.FormattingEnabled = true;
-            this.comboBoxAdress.Items.AddRange(new object[] {
-            "420151, г. Лесной, ул. Вишневая, 32",
-            "125061, г. Лесной, ул. Подгорная, 8",
-            "630370, г. Лесной, ул. Шоссейная, 24",
-            "400562, г. Лесной, ул. Зеленая, 32",
-            "614510, г. Лесной, ул. Маяковского, 47",
-            "410542, г. Лесной, ул. Светлая, 46",
-            "620839, г. Лесной, ул. Цветочная, 8",
-            "443890, г. Лесной, ул. Коммунистическая, 1",
-            "603379, г. Лесной, ул. Спортивная, 46",
-            "603721, г. Лесной, ул. Гоголя, 41",
-            "410172, г. Лесной, ул. Северная, 13",
-            "614611, г. Лесной, ул. Молодежная, 50",
-            "454311, г.Лесной, ул. Новая, 19",
-            "660007, г.Лесной, ул. Октябрьская, 19",
-            "603036, г. Лесной, ул. Садовая, 4",
-            "394060, г.Лесной, ул. Фрунзе, 43",
-            "410661, г. Лесной, ул. Школьная, 50",
-            "625590, г. Лесной, ул. Коммунистическая, 20",
-            "625683, г. Лесной, ул. 8 Марта",
-            "450983, г.Лесной, ул. Комсомольская, 26",
-            "394782, г. Лесной, ул. Чехова, 3",
-            "603002, г. Лесной, ул. Дзержинского, 28",
-            "450558, г. Лесной, ул. Набережная, 30",
-            "344288, г. Лесной, ул. Чехова, 1",
-            "614164, г.Лесной,  ул. Степная, 30",
-            "394242, г. Лесной, ул. Коммунистическая, 43",
-            "660540, г. Лесной, ул. Солнечная, 25",
-            "125837, г. Лесной, ул. Шоссейная, 40",
-            "125703, г. Лесной, ул. Партизанская, 49",
-            "625283, г. Лесной, ул. Победы, 46",
-            "614753, г. Лесной, ул. Полевая, 35",
-            "426030, г. Лесной, ул. Маяковского, 44",
-            "450375, г. Лесной ул. Клубная, 44",
-            "625560, г. Лесной, ул. Некрасова, 12",
-            "630201, г. Лесной, ул. Комсомольская, 17",
-            "190949, г. Лесной, ул. Мичурина, 26"});
             this.comboBoxAdress.Location = new System.Drawing.Point(185, 371);
             this.comboBoxAdress.Name = "comboBoxAdress";
             this.comboBoxAdress.Size = new System.Drawing.Size(205, 22);
@@ -184,18 +144,6 @@
             this.comboBoxFio.BackColor = System.Drawing.SystemColors.Window;
             this.comboBoxFio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFio.FormattingEnabled = true;
-            this.comboBoxFio.Items.AddRange(new object[] {
-            "Никифорова Весения Николаевна",
-            "Сазонов Руслан Германович",
-            "Одинцов Серафим Артёмович",
-            "Степанов Михаил Артёмович",
-            "Ворсин Петр Евгеньевич",
-            "Старикова Елена Павловна",
-            "Михайлюк Анна Вячеславовна",
-            "Ситдикова Елена Анатольевна",
-            "Ворсин Петр Евгеньевич",
-            "Старикова Елена Павловна",
-            "Бойматов Ойбекжон Фахридинович"});
             this.comboBoxFio.Location = new System.Drawing.Point(185, 343);
             this.comboBoxFio.Name = "comboBoxFio";
             this.comboBoxFio.Size = new System.Drawing.Size(205, 22);
@@ -261,40 +209,6 @@
             this.comboBoxArticle.BackColor = System.Drawing.SystemColors.Window;
             this.comboBoxArticle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxArticle.FormattingEnabled = true;
-            this.comboBoxArticle.Items.AddRange(new object[] {
-            "A124F1",
-            "A555A5",
-            "B320R5",
-            "B431R5",
-            "C436G5",
-            "D131R4",
-            "D268G5",
-            "D329H3",
-            "D364R4",
-            "D572U8",
-            "E482R4",
-            "F427R5",
-            "F572H7",
-            "F635R4",
-            "G432E4",
-            "G531F4",
-            "G783F5",
-            "H535R5",
-            "H782T5",
-            "J384T6",
-            "K345R4",
-            "K358H6",
-            "L754R4",
-            "M542T5",
-            "N457T5",
-            "O754F4",
-            "P764G4",
-            "S123A1",
-            "S213E3",
-            "S326R5",
-            "S634B5",
-            "T324F5",
-            "А112Т4"});
             this.comboBoxArticle.Location = new System.Drawing.Point(13, 97);
             this.comboBoxArticle.Name = "comboBoxArticle";
             this.comboBoxArticle.Size = new System.Drawing.Size(83, 22);
@@ -373,6 +287,7 @@
             this.button2.TabIndex = 65;
             this.button2.Text = "Добавить заказ";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 

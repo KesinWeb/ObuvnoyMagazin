@@ -230,6 +230,5 @@ namespace ObuvnoyMagazin
                     MessageBox.Show("Фото загружено", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
     }
 }

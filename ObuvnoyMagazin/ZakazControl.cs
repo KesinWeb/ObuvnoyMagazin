@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace ObuvnoyMagazin
 {
@@ -18,8 +19,10 @@ namespace ObuvnoyMagazin
         public string Adress { get; set; }
         public DateTime DataZakaza { get; set; }
         public DateTime DataDostavki { get; set; }
-        public ZakazControl()
+        string connectDB = "Host = localhost; Username = postgres; Password = postgres; Port = 5432; Database = db_obuv_test ";
+        public ZakazControl(int nomerzakaza)
         {
+            this.NomerZakaza = nomerzakaza;
             InitializeComponent();
         }
         public void SetLabels()
@@ -37,6 +40,19 @@ namespace ObuvnoyMagazin
                 labelStatusZak.ForeColor = Color.DarkBlue;
             }
             labelNomerZak.Text = "Номер заказа: " + NomerZakaza.ToString();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            var con = new NpgsqlConnection(connectDB);
+            con.Open();
+            var sql = $@"DELETE FROM public.zakaz
+	                WHERE nomer_zakaza_pk = '{NomerZakaza}';";    
+            var cmd = new NpgsqlCommand(sql,con);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Товар успешно удалён","Информация",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var main = (MainForm)Application.OpenForms["MainForm"];
+            main.Zakaz();
         }
     }
 }
